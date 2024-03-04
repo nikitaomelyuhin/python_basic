@@ -10,10 +10,10 @@ print(multiply(2, 10, 11, 50))
 
 def is_prime(num):
     if num <= 1:
-        return False
+      return False
     for i in range(2, int(num**0.5) + 1):
-        if num % i == 0:
-            return False
+      if num % i == 0:
+        return False
     return True
 
 def determine_numbers(numbers, type):
@@ -25,15 +25,15 @@ def determine_numbers(numbers, type):
     elif type == 'odd':
       if num % 2 != 0:
         result.append(num)
-    elif type == 'simple':
+    elif type == 'prime':
       if is_prime(num):
         result.append(num)
   return result
 
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-print(determine_numbers(numbers, 'even'))
-print(determine_numbers(numbers, 'odd'))
-print(determine_numbers(numbers, 'simple'))
+NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(determine_numbers(NUMBERS, 'even'))
+print(determine_numbers(NUMBERS, 'odd'))
+print(determine_numbers(NUMBERS, 'prime'))
 
 def time_check(func):
   def wrapper(*args):
