@@ -1,3 +1,5 @@
+from datetime import datetime
+
 def multiply(*args, multiple = 2):
   result = []
   for num in args:
@@ -32,3 +34,19 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print(determine_numbers(numbers, 'even'))
 print(determine_numbers(numbers, 'odd'))
 print(determine_numbers(numbers, 'simple'))
+
+def time_check(func):
+  def wrapper(*args):
+    start_time = datetime.now()
+    result = func(*args)
+    print(datetime.now() - start_time)
+    return result
+  return wrapper
+  
+@time_check
+def useless(range_number):
+  result = []
+  for n in range(range_number):
+    result.append(n)
+
+print(useless(1000))
